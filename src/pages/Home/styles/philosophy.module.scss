@@ -1,0 +1,191 @@
+.philosophyContainer {
+  padding: 150px 30px 0;
+  display: flex;
+  gap: 80px;
+
+  @media only screen and (max-width: 1023px) {
+    display: block;
+    padding: 120px 18px 0;
+  }
+}
+
+.philosophyLeft {
+  width: 60.87%;
+  overflow: hidden;
+  position: sticky;
+  top: 150px;
+  left: 0;
+  height: calc(100vh - 175px);
+
+  h2 {
+    position: absolute;
+    top: 0;
+    font-size: 2.1rem;
+    font-weight: 400;
+    z-index: 10;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: 0;
+
+    h2 {
+      font-size: 1.9rem;
+    }
+  }
+}
+
+.philosophyRight {
+  flex: 1;
+
+  @media only screen and (max-width: 1023px) {
+    margin-top: 70px;
+  }
+}
+
+.philosophyBg {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    path,
+    rect {
+      fill: currentColor;
+    }
+  }
+
+  @media only screen and (max-width: 1023px) {
+    svg {
+      width: 100%;
+    }
+  }
+}
+
+.philosophyWeare {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 3vw;
+  letter-spacing: -0.5px;
+  line-height: 0.95;
+
+  @media only screen and (max-width: 1023px) {
+    position: initial;
+    font-size: 8vw;
+  }
+}
+
+.philosophyTop {
+  display: flex;
+  justify-content: space-between;
+  gap: 50px;
+  margin-bottom: 120px;
+
+  h2 {
+    font-size: 3.4rem;
+    letter-spacing: -0.7px;
+    font-weight: 400;
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1.8rem;
+  }
+
+  .vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+  }
+
+  .line {
+    width: 1px;
+    height: 25px;
+    background-color: currentColor;
+    margin: 8px auto 5px;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    gap: 25px;
+    margin-bottom: 70px;
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    .vertical {
+      margin-bottom: 5px;
+    }
+
+    .line {
+      height: 18px;
+    }
+  }
+}
+
+.philosophyMid {
+  margin-bottom: 35px;
+
+  p {
+    font-size: 1.6rem;
+    font-feature-settings: 'palt' 1;
+    line-height: 1.8;
+    margin-bottom: 35px;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 30px;
+
+    p {
+      font-size: 1.4rem;
+      line-height: 1.7;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+.philosophyBot {
+  p {
+    font-size: 1.7rem;
+    line-height: 1.5;
+    margin-bottom: 35px;
+
+    &:last-child {
+      margin-bottom: initial;
+    }
+  }
+
+  .line {
+    font-size: 1.6rem;
+    margin-bottom: 35px;
+    opacity: 0.3;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 75px;
+
+    .line {
+      font-size: 1.4rem;
+      margin-bottom: 25px;
+    }
+
+    p {
+      font-size: 1.5rem;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+  }
+}

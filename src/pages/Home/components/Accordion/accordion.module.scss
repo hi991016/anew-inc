@@ -1,0 +1,109 @@
+.accordion {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  font-feature-settings: 'palt' 1;
+
+  @media only screen and (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+
+  &.langEn {
+    p {
+      font-size: 1.6rem;
+    }
+
+    .accordion_content {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      p {
+        font-size: 1.5rem;
+      }
+
+      .accordion_content {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &:last-child {
+    margin-bottom: initial;
+  }
+
+  &.active {
+    .accordion_content {
+      height: auto;
+    }
+
+    .accordion_icon {
+      transform: rotate(45deg);
+    }
+  }
+
+  &_icon {
+    transition: 0.15s linear;
+
+    svg {
+      line {
+        stroke: currentColor;
+      }
+    }
+  }
+
+  &_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &_heading {
+    h2 {
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      h2 {
+        font-size: 1.5rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &_content {
+    height: 0;
+    overflow: hidden;
+    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    font-size: 1.4rem;
+    line-height: 1.6;
+
+    span {
+      font-size: 1.5rem;
+    }
+
+    &-body {
+      padding-top: 25px;
+    }
+
+    @media only screen and (max-width: 1023px) {
+      font-size: 1.3rem;
+      line-height: 1.7;
+
+      span {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

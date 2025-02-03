@@ -1,0 +1,23 @@
+:root {
+  --app-height: 100vh;
+
+  --main-bg-cl: #33392e;
+  --main-text-cl: #a3a18b;
+  --main-bg-rgb: 51, 57, 46;
+  --main-text-rgb: 163, 161, 139;
+  --opacity: 0.3;
+
+  --times-fonts: 'Times New Roman', serif;
+  --sans-serif-fonts: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --jp-fonts: 'Helvetica Neue', Helvetica, Arial, 'Yu Gothic', YuGothic, 'Hiragino Sans', 'Hiragino Kaku Gothic ProN',
+    Meiryo, sans-serif;
+  --yugothic-fonts: 'Yu Gothic', YuGothic, yu-gothic-pr6n, sans-serif;
+}
+
+[data-theme='light'] {
+  --main-bg-cl: #f0f0e4;
+  --main-text-cl: #5a7445;
+  --main-bg-rgb: 240, 240, 228;
+  --main-text-rgb: 90, 116, 69;
+  --opacity: 0.1;
+}

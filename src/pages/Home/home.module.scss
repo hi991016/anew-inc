@@ -1,0 +1,26 @@
+.fullpageInner {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.vertical {
+  position: relative;
+  height: 100vh;
+}
+
+.verticalNormal {
+  position: relative;
+  height: auto !important;
+}
+
+.scrollable {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  &::-webkit-scrollbar {
+    width: 0;
+  }
+}

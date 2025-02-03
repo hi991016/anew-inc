@@ -1,0 +1,51 @@
+.footer {
+  padding: 0 30px 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  align-items: baseline;
+
+  &-right,
+  &-center,
+  &-left {
+    font-size: 1.6rem;
+    width: fit-content;
+  }
+
+  &-center {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  &-right {
+    text-align: right;
+    margin-left: auto;
+  }
+
+  @media only screen and (max-width: 1023px) {
+    padding: 15px 18px;
+    display: block;
+    gap: unset;
+
+    &-right,
+    &-center {
+      font-size: 1.3rem;
+    }
+
+    &-left {
+      font-size: 1.6rem;
+      margin-bottom: 30px;
+    }
+
+    &-center {
+      display: block;
+      margin: 0 0 7px;
+    }
+
+    &-right {
+      text-align: left;
+      margin-left: 0;
+    }
+  }
+}

@@ -1,0 +1,72 @@
+// ===== on change fade content =====
+.ease-in {
+  opacity: 0;
+  animation: 1s forwards easeIn;
+  display: none;
+  visibility: hidden;
+
+  &.action {
+    display: block;
+    visibility: visible;
+  }
+}
+
+@keyframes easeIn {
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.fade {
+  &-enter {
+    opacity: 0;
+  }
+
+  &-enter-active {
+    opacity: 1;
+    transition: opacity 300ms cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  }
+
+  &-exit {
+    opacity: 1;
+  }
+
+  &-exit-active {
+    opacity: 0;
+    transition: opacity 200ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+}
+
+// ===== fonts =====
+.times-fonts {
+  font-family: var(--times-fonts) !important;
+}
+
+.sansserif-fonts {
+  font-family: var(--sans-serif-fonts) !important;
+}
+
+//
+
+img {
+  &.loaded {
+    opacity: 1;
+  }
+}
+
+// ===== show/hide =====
+.sp-only,
+.is-hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1023px) {
+  .pc-only {
+    display: none !important;
+  }
+
+  .sp-only {
+    display: block !important;
+  }
+}

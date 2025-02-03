@@ -1,0 +1,17 @@
+.jincup {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f0e4;
+  color: #5a7445;
+  font-family: var(--jp-fonts);
+
+  img {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.loaded {
+      opacity: 1;
+    }
+  }
+}
