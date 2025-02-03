@@ -1,50 +1,45 @@
-# React + TypeScript + Vite
+# ANEW INC
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a starter template using **Vite**, **TypeScript**, **React**, **ESLint**, **Prettier**, and **Husky** for fast development, clean code, and type checking. It includes pre-configured setups for linting, formatting, and type checking, along with Git hooks for quality control before commits.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Vite**: Fast development server and build tool.
+- **TypeScript**: Strongly typed JavaScript for safer code.
+- **ESLint**: Enforces code quality and consistency.
+- **Prettier**: Automatically formats code to a standard style.
+- **Husky**: Adds Git hooks for linting and formatting checks before commits.
+- **React**: UI library for building component-based user interfaces.
+- **React Router**: For navigation between pages in your React application.
 
-## Expanding the ESLint configuration
+## Config Prettier/Eslint
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+```bash
+yarn create vite
+yarn vite-tsconfig-paths
+yarn add --dev prettier eslint-config-prettier eslint-plugin-prettier
+yarn add husky lint-staged --dev
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname
-    }
-  }
-})
+tsconfig.json/eslint.config/prettierrc/
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### Prerequisites
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules
-  }
-})
-```
+- **Node.js** (v14 or higher)
+- **Yarn** (recommended) or **npm**
+
+### Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/hi991016/anew-inc-vite
+   cd vite-ts-code-base
+   yarn
+   ```
+
+   Start the development server:
+   ```bash
+   yarn dev
+   ```
