@@ -44,7 +44,7 @@ const JincupPage = () => {
         url='https://anew-inc.com/projects/jincup-anew/'
         ogImg='https://anew-inc.com/ogp_jincup.jpg'
       >
-        <div className={styles.jincup}>
+        <div className={styles.jincupPage}>
           <Loading />
 
           <Header

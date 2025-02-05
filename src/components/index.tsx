@@ -1,4 +1,5 @@
-import HeaderMain from './HeaderMain'
-import FooterMain from './FooterMain'
+import Header from './Header'
+import Footer from './Footer'
+import Layout from './Layout'
 
-export { HeaderMain, FooterMain }
+export { Header, Footer, Layout }

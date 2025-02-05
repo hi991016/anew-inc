@@ -1,5 +1,4 @@
-import LayoutMain from './LayoutMain'
-import ScrollToTop from './ScrollToTop'
 import SEO from './SEO'
+import ScrollToTop from './ScrollToTop'
 
-export { LayoutMain, SEO, ScrollToTop }
+export { SEO, ScrollToTop }

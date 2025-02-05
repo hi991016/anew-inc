@@ -11,7 +11,7 @@ const Projects = ({ elRefMain }: { elRefMain?: any }) => {
       <div className={styles.projectsContainer}>
         <Link to='/projects/jincup-anew' className={styles.projectsImg}>
           <figure>
-            <img src={jincupImg} alt='Jincup Anew' loading='lazy' width={606} height={539} />
+            <img data-src={jincupImg} alt='Jincup Anew' loading='lazy' width={606} height={539} />
           </figure>
         </Link>
 

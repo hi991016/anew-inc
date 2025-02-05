@@ -3,12 +3,7 @@ import { Link } from 'react-router-dom'
 
 import styles from './header.module.scss'
 
-// type
-type Props = {
-  onScrollSection: (val: string) => void
-}
-
-const HeaderMain = ({ onScrollSection }: Props) => {
+const Header = () => {
   const headerMenuRef = useRef<any>(null)
   const toggleRef = useRef<any>(null)
   const [checked, setChecked] = useState(true)
@@ -18,7 +13,7 @@ const HeaderMain = ({ onScrollSection }: Props) => {
     height: 0
   })
 
-  // data-theme
+  // ===== get data theme =====
   useEffect(() => {
     let currentTheme = localStorage.getItem('data-theme')
     if (!currentTheme) currentTheme = 'dark'
@@ -31,31 +26,7 @@ const HeaderMain = ({ onScrollSection }: Props) => {
     document.documentElement.setAttribute('data-theme', currentTheme)
   }, [])
 
-  // resize update width/height
-  useEffect(() => {
-    const handleResize = () => {
-      setSize({
-        width: window.innerWidth,
-        height: window.innerHeight
-      })
-    }
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  // detect mobile/pc show/hide menu
-  useEffect(() => {
-    if (size.width > 1023 && openMenu) {
-      setOpenMenu(false)
-    }
-  }, [size.width, openMenu])
-
-  // toggle menu
-  const toggleMenu = () => {
-    setOpenMenu(!openMenu)
-  }
-
-  // handle change theme
+  // =====  handle change theme =====
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(e.target.checked)
     if (e.target.checked) {
@@ -67,6 +38,63 @@ const HeaderMain = ({ onScrollSection }: Props) => {
     }
   }
 
+  // ===== toggle menu =====
+  const toggleMenu = () => {
+    setOpenMenu(!openMenu)
+  }
+
+  // ===== resize update width/height =====
+  useEffect(() => {
+    const handleResize = () => {
+      setSize({
+        width: window.innerWidth,
+        height: window.innerHeight
+      })
+    }
+    window.addEventListener('resize', handleResize)
+    return () => window.removeEventListener('resize', handleResize)
+  }, [])
+
+  // ===== detect mobile/pc show/hide menu =====
+  useEffect(() => {
+    if (size.width > 1023 && openMenu) {
+      setOpenMenu(false)
+    }
+  }, [size.width, openMenu])
+
+  // ===== on scroll section =====
+  const onScrollSection = (val: string) => {
+    const refScrollable = document.getElementById('refScrollable')
+
+    switch (val) {
+      case 'projects':
+        window.fullpage_api?.moveTo(3)
+        refScrollable?.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        })
+        break
+      case 'philosophy':
+        window.fullpage_api?.moveTo(4)
+        refScrollable?.scrollTo({
+          top: 1.5,
+          behavior: 'smooth'
+        })
+        break
+      case 'company':
+        window.fullpage_api?.moveTo(4)
+        refScrollable?.scrollTo({
+          top: document.getElementById('company')?.offsetTop,
+          behavior: 'smooth'
+        })
+        // setTimeout refScrollable.current.scrollTop === 0 ? 900 : 0
+        break
+      default:
+        break
+    }
+  }
+
+  /* --------------------------------- return --------------------------------- */
   return (
     <>
       <header className={styles.header}>
@@ -141,4 +169,4 @@ const HeaderMain = ({ onScrollSection }: Props) => {
   )
 }
 
-export default HeaderMain
+export default Header

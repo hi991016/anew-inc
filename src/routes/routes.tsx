@@ -43,6 +43,7 @@ const RoutesApp = () => {
     })
   }, [location.pathname])
 
+  /* --------------------------------- return --------------------------------- */
   return (
     <Routes>
       <Route path='*' element={<NotFoundPage />} />

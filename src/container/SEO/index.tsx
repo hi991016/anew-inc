@@ -12,7 +12,7 @@ interface SEOProps {
 const SEO = ({
   title = 'anew inc. ｜ アニュウインク',
   description = 'anew inc.はプロダクトサステナビリティの観点から「私たちはいかにしてよき祖先となれるか」というグッドアンセスターとしての可能性を追求するプロジェクトチームです。',
-  url = 'ttps://anew-inc.com',
+  url = 'https://anew-inc.com',
   ogImg = 'https://anew-inc.com/ogp.jpg',
   children
 }: SEOProps) => {
@@ -21,7 +21,6 @@ const SEO = ({
       <Helmet>
         <meta name='title' content={title} />
         <meta name='description' content={description} />
-
         {/* Standard metadata tags */}
         <meta name='description' content={description} />
         {/* End standard metadata tags */}

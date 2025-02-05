@@ -5,7 +5,7 @@ import ReactFullpage from '@fullpage/react-fullpage'
 import { gsap } from 'gsap'
 
 /* ------------------------------- components ------------------------------- */
-import { HeaderMain, FooterMain } from 'src/components'
+import { Header, Footer } from 'src/components'
 import { ScrollDown } from './components'
 
 /* -------------------------------- container ------------------------------- */
@@ -25,7 +25,7 @@ declare global {
 const HomePage = () => {
   const [sectionIndex, setSectionIndex] = useState(0)
   const [isReady, setIsReady] = useState(false)
-
+  //
   const refFirstview = useRef<any>(null)
   const refProjects = useRef<any>(null)
   const refCompany = useRef<any>(null)
@@ -103,7 +103,10 @@ const HomePage = () => {
       default:
         break
     }
-    window.fullpage_api.setAllowScrolling(true, 'down')
+    //
+    setTimeout(() => {
+      window.fullpage_api.setAllowScrolling(true, 'down')
+    }, 100)
   }
 
   // ===== init fullpage =====
@@ -122,7 +125,7 @@ const HomePage = () => {
       })
     })
     init()
-    // scroll fullpage
+    //
     'mousewheel scroll touchmove'.split(' ').forEach((evt) => {
       refScrollable.current.addEventListener(
         evt,
@@ -141,51 +144,20 @@ const HomePage = () => {
     })
   }, [])
 
-  // ===== on scroll section =====
-  const onScrollSection = (val: string) => {
-    switch (val) {
-      case 'projects':
-        window.fullpage_api.moveTo(3)
-        refScrollable.current.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-        })
-        break
-      case 'philosophy':
-        window.fullpage_api.moveTo(4)
-        refScrollable.current.scrollTo({
-          top: 1.5,
-          behavior: 'smooth'
-        })
-        break
-      case 'company':
-        window.fullpage_api.moveTo(4)
-        refScrollable.current.scrollTo({
-          top: refCompany.current.offsetTop,
-          behavior: 'smooth'
-        })
-        // setTimeout refScrollable.current.scrollTop === 0 ? 900 : 0
-        break
-      default:
-        break
-    }
-  }
-
   return (
     <>
       <SEO>
-        <HeaderMain onScrollSection={(val: string) => onScrollSection(val)} />
+        <Header />
         <ScrollDown elRef={refScrollDown} />
         <ReactFullpage
-          // anchors={['#1', '#2', '#3', '#4']}
           autoScrolling={true}
           controlArrows={false}
           scrollBar={false}
           scrollOverflow={false}
-          scrollingSpeed={700}
+          scrollingSpeed={900}
           sectionSelector={'[data-fp-vertical]'}
           normalScrollElements={'[data-fp-scrollable]'}
-          afterLoad={(destination) => {
+          afterLoad={(_origin, destination) => {
             window.fullpage_api.setAllowScrolling(false, 'down')
             hideElements()
             animateIn({ currentIndex: destination.index })
@@ -195,7 +167,6 @@ const HomePage = () => {
           onLeave={() => {
             if (isReady && sectionIndex < 3) {
               window.fullpage_api.setAllowScrolling(false, 'down')
-              // hideElements()
             }
           }}
           credits={{
@@ -225,10 +196,10 @@ const HomePage = () => {
                   </div>
                 </section>
                 <section className={styles.verticalNormal} data-fp-vertical>
-                  <div className={styles.scrollable} ref={refScrollable} data-fp-scrollable>
+                  <div className={styles.scrollable} id='refScrollable' ref={refScrollable} data-fp-scrollable>
                     <Philosophy />
                     <Company elRefMain={refCompany} />
-                    <FooterMain />
+                    <Footer />
                   </div>
                 </section>
               </main>
