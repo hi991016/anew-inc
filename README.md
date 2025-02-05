@@ -23,7 +23,6 @@ yarn add husky lint-staged --dev
 tsconfig.json/eslint.config/prettierrc/
 ```
 
-
 ### Prerequisites
 
 - **Node.js** (v14 or higher)
@@ -40,6 +39,7 @@ tsconfig.json/eslint.config/prettierrc/
    ```
 
    Start the development server:
+
    ```bash
    yarn dev
    yarn build
