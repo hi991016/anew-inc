@@ -34,12 +34,14 @@ tsconfig.json/eslint.config/prettierrc/
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/hi991016/anew-inc-vite
-   cd vite-ts-code-base
+   git clone https://github.com/hi991016/anew-inc
+   cd anew-inc
    yarn
    ```
 
    Start the development server:
    ```bash
    yarn dev
+   yarn build
+   serve -s dist
    ```
